@@ -33,7 +33,7 @@ def cmods_mod_add(name, repo):
     with open("cmods.json", "w") as f:
         json.dump(cmods_config, f)
 
-def cmods_mod_add(name):
+def cmods_mod_del(name):
     cmods_config = None
     
     with open("cmods.json", "r") as f:
@@ -50,7 +50,7 @@ def cmods_set_cflags(cflags):
     with open("cmods.json", "r") as f:
         cmods_config = json.load(f)
     
-    del cmods_config["CFLAGS"]=cflags
+    cmods_config["CFLAGS"]=cflags
     
     with open("cmods.json", "w") as f:
         json.dump(cmods_config, f)
