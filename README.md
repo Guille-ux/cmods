@@ -1,7 +1,7 @@
 # cpak
 
-[![PyPI - Version](https://img.shields.io/pypi/v/cpak.svg)](https://pypi.org/project/cpak)
-[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/cpak.svg)](https://pypi.org/project/cpak)
+[![PyPI - Version](https://img.shields.io/pypi/v/cmods.svg)](https://pypi.org/project/cmods)
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/cmods.svg)](https://pypi.org/project/cmods)
 
 -----
 
@@ -13,9 +13,9 @@
 ## Installation
 
 ```console
-pip install cpak
+pip install cmods
 ```
 
 ## License
 
-`cpak` is distributed under the terms of the [MIT](https://spdx.org/licenses/MIT.html) license.
+`cmods` is distributed under the terms of the [MIT](https://spdx.org/licenses/MIT.html) license.
