@@ -18,7 +18,7 @@ cmods_make_rule_template = """
 .PHONY: {module_name}
 
 {module_name}:
-    $(MAKE) -C $(CPACK_SRC)/{module_name}/ CFLAGS="$(CPACK_CFLAGS)"
+\t$(MAKE) -C $(CPACK_SRC)/{module_name}/ CFLAGS="$(CPACK_CFLAGS)"
 
 """
 
@@ -42,10 +42,10 @@ def make(path):
     if "cmods" in os.listdir("."):
         shutil.rmtree("cmods")
 
-    shutil.copytree(os.path.join(path, "src"), ".")
-    shutil.copytree(os.path.join(path, "include"), ".")
-    shutil.copyfile(os.path.join(path, "Makefile"), ".")
-    shutil.copyfile(os.path.join(path, "cmods.json"), ".")
+    shutil.copytree(os.path.join(path, "src"), "src", dirs_exist_ok=True)
+    shutil.copytree(os.path.join(path, "include"), "include", dirs_exist_ok=True)
+    shutil.copyfile(os.path.join(path, "Makefile"), "Makefile")
+    shutil.copyfile(os.path.join(path, "cmods.json"), "cmods.json")
     os.mkdir("cmods")
 
     with open("cmods.json", "r") as f:
@@ -56,7 +56,7 @@ def make(path):
     for module in cmods_config["dependencies"].keys():
         cmods_makefile += cmods_make_rule_template.format(module_name=module)
     
-    cmods_makefile += cmods_makefile_all_template.format(module_list=" ".join(cmods_config["dependencies"].keys()))
+    cmods_makefile += cmods_make_all_template.format(module_list=" ".join(cmods_config["dependencies"].keys()))
 
     with open(os.path.join("cmods", "cmods.mk"), "w") as f:
         f.write(cmods_makefile)
