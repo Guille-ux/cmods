@@ -77,6 +77,15 @@ cmods del-mod <name>
 
 where `<name>` is the name of the module.
 
+### Adding-Flags
+
+to add some flags, run:
+```bash
+cmods set-cflags <cflags>
+```
+
+where `<cflags>` are the flags to be used.
+
 ### The-Makefile
 
 writing the makefile you must to include `cmods/cmods.mk` which is the just-in-time generated Makefile.
@@ -98,9 +107,48 @@ all: cmods_all
 
 ***Note**:  if you want to set other things like the compiler, you can export that before including `cmods/cmods.mk`*
 
+### Building
+
+to build your project, first you must create a new folder to build the build there, for example:
+
+```bash
+mkdir build
+cd build
+```
+
+then, you must run:
+
+```bash
+cmods make <path>
+```
+
+where `<path>` is the path to the project root directory.
+
+with that, you will have all the files needed to build your project in your new directory.
+
 ## Developer-Documentation
 
-### 
+### About-Creating-Repositories
+
+the repositories are a simple `.json` file accessible by http/https like this:
+
+```json
+{
+	"hola":"https://guille-ux.github.io/hola.zip"
+}
+```
+
+where the key is the module name and the value is the url to the module.
+
+***Note**: Make sure the repositorie and the url's are accessible.*
+
+### About-Creating-Modules
+
+#### About-Module-Structure
+
+#### About-Makefile
+
+#### Names
 
 ## License
 
