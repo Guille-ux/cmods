@@ -144,6 +144,20 @@ where the key is the module name and the value is the url to the module.
 
 ### About-Creating-Modules
 
+All modules must follow the structure below:
+
+```bash
+.
+├── include
+│   └── <module name>
+│       └── <headers>
+└── src
+    ├── build
+    └── <module name>
+        ├── <implementation>
+        └── Makefile
+```
+
 #### About-Module-Structure
 
 #### About-Makefile
