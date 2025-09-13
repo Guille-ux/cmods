@@ -144,6 +144,8 @@ where the key is the module name and the value is the url to the module.
 
 ### About-Creating-Modules
 
+#### About-Module-Structure
+
 All modules must follow the structure below:
 
 ```bash
@@ -158,11 +160,15 @@ All modules must follow the structure below:
         └── Makefile
 ```
 
-#### About-Module-Structure
-
 #### About-Makefile
 
+The module makefile, won't have any CFLAGS definition.
+And object files will be placed on build folder at src.
+
 #### Names
+
+**IMPORTANT**: any object file must be called `<module-name>_name.o`
+where `<module-name>` is the name of your module, and `name` is the filename of the source file.
 
 ## License
 
