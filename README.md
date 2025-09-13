@@ -167,7 +167,8 @@ And object files will be placed on build folder at src.
 
 #### Names
 
-**IMPORTANT**: any object file must be called `<module-name>_name.o`
+**IMPORTANT**: any object file must be called `<module-name>_name.o`.
+
 where `<module-name>` is the name of your module, and `name` is the filename of the source file.
 
 ## License
